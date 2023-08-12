@@ -1,11 +1,11 @@
-import { ExpenseObject } from "../App";
+import { Expense } from "../App";
 import "./ExpenseItem.scss";
 
-class Expense {
-  public expense = new ExpenseObject();
+class ExpenseProps {
+  public expense = new Expense();
 }
 
-export default function ExpenseItem(props: Expense) {
+export default function ExpenseItem(props: ExpenseProps) {
   return (
     // Expense Item Container
     <div className="expense-item">

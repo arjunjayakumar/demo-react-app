@@ -1,7 +1,7 @@
 import "./App.scss";
 import ExpenseItem from "./components/ExpenseItem";
 
-export class ExpenseObject {
+export class Expense {
   public id: string = "";
   public title: string = "";
   public amount: number = 0;
@@ -9,7 +9,7 @@ export class ExpenseObject {
 }
 
 function App() {
-  const expenses: ExpenseObject[] = [
+  const expenses: Expense[] = [
     {
       id: "e1",
       title: "Health Insurance",
