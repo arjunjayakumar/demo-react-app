@@ -1,5 +1,5 @@
 import "./App.scss";
-import ExpenseItem from "./components/ExpenseItem";
+import Expenses from "./components/Expenses";
 
 export class Expense {
   public id: string = "";
@@ -33,9 +33,7 @@ function App() {
 
   return (
     <>
-      {expenses.map((expense) => (
-        <ExpenseItem expense={expense} key={expense.id} />
-      ))}
+      <Expenses expensesArray={expenses} />
     </>
   );
 }
