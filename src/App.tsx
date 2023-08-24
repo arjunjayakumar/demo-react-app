@@ -1,5 +1,5 @@
 import "./App.scss";
-import Expenses from "./components/Expenses";
+import Expenses from "./components/expense/Expenses";
 
 export class Expense {
   public id: string = "";

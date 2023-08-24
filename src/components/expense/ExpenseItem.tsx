@@ -1,6 +1,6 @@
-import { Expense } from "../App";
+import { Expense } from "../../App";
 import ExpenseDate from "./ExpenseDate";
-import Card from "./Card";
+import Card from "../shared/Card";
 import "./ExpenseItem.scss";
 
 const ExpenseItem = ({ expense }: { expense: Expense }) => {
