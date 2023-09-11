@@ -1,4 +1,5 @@
 import "./App.scss";
+import NewExpense from "./components/NewExpense/NewExpense";
 import Expenses from "./components/expense/Expenses";
 
 export class Expense {
@@ -33,6 +34,7 @@ function App() {
 
   return (
     <>
+      <NewExpense />
       <Expenses expensesArray={expenses} />
     </>
   );
