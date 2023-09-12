@@ -1,5 +1,7 @@
 import "./App.scss";
-import NewExpense from "./components/NewExpense/NewExpense";
+import NewExpense, {
+  ExpenseFormData,
+} from "./components/NewExpense/NewExpense";
 import Expenses from "./components/expense/Expenses";
 
 export class Expense {
@@ -32,9 +34,13 @@ function App() {
     },
   ];
 
+  const addExpenseHandler = (expenseData: ExpenseFormData) => {
+    console.table(expenseData);
+  };
+
   return (
     <>
-      <NewExpense />
+      <NewExpense onAddExpense={addExpenseHandler} />
       <Expenses expensesArray={expenses} />
     </>
   );
