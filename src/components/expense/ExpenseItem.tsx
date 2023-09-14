@@ -1,6 +1,6 @@
 import { Expense } from "../../App";
-import ExpenseDate from "./ExpenseDate";
 import Card from "../shared/Card";
+import ExpenseDate from "./ExpenseDate";
 import "./ExpenseItem.scss";
 import { useState } from "react";
 
