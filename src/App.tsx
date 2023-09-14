@@ -1,6 +1,6 @@
 import "./App.scss";
 import NewExpense from "./components/NewExpense/NewExpense";
-import Expenses from "./components/expense/Expenses";
+import Expenses from "./components/Expense/Expenses";
 
 export class Expense {
   public id: string = "";

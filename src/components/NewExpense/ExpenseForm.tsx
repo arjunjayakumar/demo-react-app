@@ -1,7 +1,12 @@
 import React, { useState } from "react";
 import "./ExpenseForm.scss";
+import { ExpenseFormData } from "./NewExpense";
 
-const ExpenseForm = (props) => {
+interface ChildProps {
+  onSaveExpenseData: (value: ExpenseFormData) => void;
+}
+
+const ExpenseForm: React.FC<ChildProps> = ({ onSaveExpenseData }) => {
   const [enteredTitle, setEnteredTitle] = useState("");
   const [enteredAmount, setEnteredAmount] = useState("");
   const [enteredDate, setEnteredDate] = useState("");
@@ -56,7 +61,7 @@ const ExpenseForm = (props) => {
     };
 
     // console.table(expenseData);
-    props.onSaveExpenseData(expenseData);
+    onSaveExpenseData(expenseData);
     setEnteredAmount("");
     setEnteredTitle("");
     setEnteredDate("");
