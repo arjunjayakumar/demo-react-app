@@ -18,6 +18,7 @@ const Expenses = ({ expensesArray }: { expensesArray: Expense[] }) => {
         onChangeFilter={onFilterChange}
         selectedYear={filterYear}
       />
+
       {expensesArray.map((expense) => (
         <ExpenseItem expense={expense} key={expense?.id} />
       ))}

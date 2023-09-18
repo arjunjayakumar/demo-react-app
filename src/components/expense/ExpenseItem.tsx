@@ -2,15 +2,9 @@ import { Expense } from "../../App";
 import Card from "../shared/Card";
 import ExpenseDate from "./ExpenseDate";
 import "./ExpenseItem.scss";
-import { useState } from "react";
 
 const ExpenseItem = ({ expense }: { expense: Expense }) => {
-  const { date, amount } = expense,
-    [title, setTitle] = useState(expense.title);
-
-  const clickHander = () => {
-    setTitle("Updated Title!");
-  };
+  const { date, amount, title } = expense;
 
   return (
     <Card className="expense-item">
@@ -20,7 +14,6 @@ const ExpenseItem = ({ expense }: { expense: Expense }) => {
         <h2>{title}</h2>
         <div className="expense-item__price">${amount}</div>
       </div>
-      <button onClick={clickHander}>Change Title</button>
     </Card>
   );
 };
