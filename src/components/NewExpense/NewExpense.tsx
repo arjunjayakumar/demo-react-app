@@ -4,19 +4,20 @@ import "./NewExpense.scss";
 
 export interface ExpenseFormData {
   title: string;
-  amount: string;
+  amount: number;
   date: Date;
 }
 
 interface ChildProps {
   onAddExpense: (value: Expense) => void;
+  id: number;
 }
 
-const NewExpense: React.FC<ChildProps> = ({ onAddExpense }) => {
+const NewExpense: React.FC<ChildProps> = ({ onAddExpense, id }) => {
   const saveExpenseDataHandler = (enteredExpenseData: ExpenseFormData) => {
     const expenseData = {
       ...enteredExpenseData,
-      id: `e${Math.random()}`,
+      id: `e${id + 1}`,
     };
     onAddExpense(expenseData);
   };

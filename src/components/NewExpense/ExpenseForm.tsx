@@ -8,7 +8,7 @@ interface ChildProps {
 
 const ExpenseForm: React.FC<ChildProps> = ({ onSaveExpenseData }) => {
   const [enteredTitle, setEnteredTitle] = useState("");
-  const [enteredAmount, setEnteredAmount] = useState("");
+  const [enteredAmount, setEnteredAmount] = useState(0);
   const [enteredDate, setEnteredDate] = useState("");
 
   //   const [userInput, setUserInput] = useState({
@@ -25,7 +25,7 @@ const ExpenseForm: React.FC<ChildProps> = ({ onSaveExpenseData }) => {
   };
 
   const amountChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setEnteredAmount(event.target.value);
+    setEnteredAmount(Number(event.target.value));
     //     setUserInput((prevState) => {
     //       return { ...prevState, enteredAmount: event.target.value };
     //     });
@@ -62,7 +62,7 @@ const ExpenseForm: React.FC<ChildProps> = ({ onSaveExpenseData }) => {
 
     // console.table(expenseData);
     onSaveExpenseData(expenseData);
-    setEnteredAmount("");
+    setEnteredAmount(0);
     setEnteredTitle("");
     setEnteredDate("");
   };
