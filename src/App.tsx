@@ -5,7 +5,7 @@ import Expenses from "./components/Expense/Expenses";
 export class Expense {
   public id: string = "";
   public title: string = "";
-  public amount: number = 0;
+  public amount: number | string = 0;
   public date: Date = new Date();
 }
 

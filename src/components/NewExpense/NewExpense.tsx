@@ -1,3 +1,4 @@
+import { Expense } from "../../App";
 import ExpenseForm from "./ExpenseForm";
 import "./NewExpense.scss";
 
@@ -8,7 +9,7 @@ export interface ExpenseFormData {
 }
 
 interface ChildProps {
-  onAddExpense: (value: ExpenseFormData) => void;
+  onAddExpense: (value: Expense) => void;
 }
 
 const NewExpense: React.FC<ChildProps> = ({ onAddExpense }) => {
