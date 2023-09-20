@@ -7,9 +7,15 @@ import "./Expenses.scss";
 
 const Expenses = ({ expensesArray }: { expensesArray: Expense[] }) => {
   const [filterYear, setFilterYear] = useState("2023");
+  const [filteredArray, setFilterArray] = useState(expensesArray);
 
   const onFilterChange = (selectedYear: string) => {
     setFilterYear(selectedYear);
+    setFilterArray(
+      expensesArray.filter(
+        (expense) => expense?.date?.getFullYear()?.toString() === selectedYear
+      )
+    );
   };
 
   return (
@@ -19,7 +25,7 @@ const Expenses = ({ expensesArray }: { expensesArray: Expense[] }) => {
         selectedYear={filterYear}
       />
 
-      {expensesArray.map((expense) => (
+      {filteredArray.map((expense) => (
         <ExpenseItem expense={expense} key={expense?.id} />
       ))}
     </Card>
