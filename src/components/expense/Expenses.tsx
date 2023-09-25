@@ -2,8 +2,8 @@ import { useState } from "react";
 import { Expense } from "../../App";
 import Card from "../shared/Card";
 import ExpenseFilter from "./ExpenseFilter";
-import ExpenseItem from "./ExpenseItem";
 import "./Expenses.scss";
+import ExpensesList from "./ExpensesList";
 
 const Expenses = ({ expensesArray }: { expensesArray: Expense[] }) => {
   const [filterYear, setFilterYear] = useState("2023");
@@ -25,9 +25,7 @@ const Expenses = ({ expensesArray }: { expensesArray: Expense[] }) => {
         selectedYear={filterYear}
       />
 
-      {filteredArray.map((expense) => (
-        <ExpenseItem expense={expense} key={expense?.id} />
-      ))}
+      <ExpensesList expenses={filteredArray} />
     </Card>
   );
 };
