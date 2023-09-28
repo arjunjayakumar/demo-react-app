@@ -4,9 +4,10 @@ import { ExpenseFormData } from "./NewExpense";
 
 interface ChildProps {
   onSaveExpenseData: (value: ExpenseFormData) => void;
+  onCancel: () => void;
 }
 
-const ExpenseForm: React.FC<ChildProps> = ({ onSaveExpenseData }) => {
+const ExpenseForm: React.FC<ChildProps> = ({ onSaveExpenseData, onCancel }) => {
   const [enteredTitle, setEnteredTitle] = useState("");
   const [enteredAmount, setEnteredAmount] = useState(0);
   const [enteredDate, setEnteredDate] = useState("");
@@ -60,6 +61,8 @@ const ExpenseForm: React.FC<ChildProps> = ({ onSaveExpenseData }) => {
       date: new Date(enteredDate),
     };
 
+    onCancel();
+
     // console.table(expenseData);
     onSaveExpenseData(expenseData);
     setEnteredAmount(0);
@@ -103,6 +106,9 @@ const ExpenseForm: React.FC<ChildProps> = ({ onSaveExpenseData }) => {
       </div>
 
       <div className="new-expense__actions">
+        <button type="button" onClick={onCancel}>
+          Cancel
+        </button>
         <button type="submit">Add Expense</button>
       </div>
     </form>
