@@ -5,19 +5,21 @@ interface ChildProps {
   dataPoints: DataPoint[];
 }
 
-export interface DataPoint {
+interface DataPoint {
   value: number;
-  maxValue: number;
   label: string;
 }
 
 const Chart = ({ dataPoints }: ChildProps) => {
+  const dataPointsValues = dataPoints.map((dataPoint) => dataPoint.value),
+    totalMaximum = Math.max(...dataPointsValues);
+
   return (
     <div className="chart">
       {dataPoints.map((dataPoint) => (
         <ChartBar
           value={dataPoint?.value}
-          maxValue={0}
+          maxValue={totalMaximum}
           label={dataPoint?.label}
           key={dataPoint?.label}
         />

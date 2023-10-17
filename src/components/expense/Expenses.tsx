@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { Expense } from "../../App";
+import "./Expenses.scss";
 import Card from "../shared/Card";
 import ExpenseFilter from "./ExpenseFilter";
-import "./Expenses.scss";
 import ExpensesList from "./ExpensesList";
+import ExpensesChart from "./ExpensesChart";
 
 const Expenses = ({ expensesArray }: { expensesArray: Expense[] }) => {
   const [filterYear, setFilterYear] = useState("2023");
@@ -23,6 +24,7 @@ const Expenses = ({ expensesArray }: { expensesArray: Expense[] }) => {
         selectedYear={filterYear}
       />
 
+      <ExpensesChart expenses={filteredArray} />
       <ExpensesList expenses={filteredArray} />
     </Card>
   );
